@@ -13,7 +13,7 @@
 import sys
 import pygame
 
-from images.bullet import Bullet
+from bullet import Bullet
 from settings import Settings
 from ship import Ship
 
