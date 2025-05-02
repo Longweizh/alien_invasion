@@ -44,6 +44,7 @@ class AlienInvasion:
             self.ship.update()
             self.bullets.update()
             self._update_bullet()
+            self._update_aliens()
             self._update_screen()
 
     def _check_events(self):
@@ -85,7 +86,6 @@ class AlienInvasion:
         for bullet in self.bullets.copy():
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
-        print(len(self.bullets))
 
     def _update_screen(self):
         """Update images on the screen and flip to the new screen"""
@@ -99,10 +99,34 @@ class AlienInvasion:
 
     def _create_fleet(self):
         """create fleet"""
-        # Make a alien
         alien = Alien(self)
+        alien_width, alien_height = alien.rect.size
+        available_space_x = self.settings.screen_width - (2 * alien.rect.width)
+        numbers_alien_x = available_space_x // (2 * alien_width)
+
+        # Determin the number of rows
+        ship_height = self.ship.rect.height
+        available_space_y = (self.settings.screen_height -
+                             (3 * alien.rect.height) - ship_height)
+        number_rows = available_space_y // (2 * alien_height)
+
+        # Create the first row of aliens
+        for row_number in range(number_rows):
+            for alien_number in range(numbers_alien_x):
+                self._create_alien(alien_number, row_number)
+
+    def _create_alien(self, alien_number, row_number):
+        # Create an alien and place it in the row
+        alien = Alien(self)
+        alien_width, alien_height = alien.rect.size
+        alien.x = alien_width + 2 * alien_width * alien_number
+        alien.rect.x = alien.x
+        alien.rect.y = alien.rect.height + 2 * alien_height * row_number
         self.aliens.add(alien)
 
+    def _update_aliens(self):
+        """Update the position of the aliens"""
+        self.aliens.update()
 
 if __name__ == '__main__':
     # Make a game instance, and run the game
