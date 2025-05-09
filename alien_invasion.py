@@ -19,6 +19,7 @@ from alien import Alien
 from settings import Settings
 from game_stats import GameStats
 from ship import Ship
+from button import Button
 
 
 class AlienInvasion:
@@ -41,6 +42,9 @@ class AlienInvasion:
         self.aliens = pygame.sprite.Group()
 
         self._create_fleet()
+
+        # Make the play button
+        self.play_button = Button(self, "Play")
 
     def run_game(self):
         """Start the main loop for the game"""
@@ -113,6 +117,10 @@ class AlienInvasion:
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.aliens.draw(self.screen)
+
+        # Draw the play button if the game is inactive
+        if not self.stats.game_active:
+            self.play_button.draw_button()
 
         pygame.display.flip()
 
