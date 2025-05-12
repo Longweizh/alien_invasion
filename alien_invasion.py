@@ -20,6 +20,7 @@ from settings import Settings
 from game_stats import GameStats
 from ship import Ship
 from button import Button
+from scoreboard import Scoreboard
 
 
 class AlienInvasion:
@@ -46,6 +47,9 @@ class AlienInvasion:
         # Make the play button
         self.play_button = Button(self, "Play")
 
+        # Make the Scoreboard
+        self.sb = Scoreboard(self)
+
     def run_game(self):
         """Start the main loop for the game"""
         while True:
@@ -68,6 +72,10 @@ class AlienInvasion:
                 self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
                 self._check_keyup_events(event)
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_position = pygame.mouse.get_pos()
+                self.stats.reset_stats()
+                self._check_play_button(mouse_position)
 
     def _check_keydown_events(self, event):
         if event.key == pygame.K_d:
@@ -109,6 +117,7 @@ class AlienInvasion:
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
+            self.settings.increase_speed()
 
     def _update_screen(self):
         """Update images on the screen and flip to the new screen"""
@@ -121,6 +130,9 @@ class AlienInvasion:
         # Draw the play button if the game is inactive
         if not self.stats.game_active:
             self.play_button.draw_button()
+
+        # Draw the score information:
+        self.sb.show_score()
 
         pygame.display.flip()
 
@@ -192,6 +204,7 @@ class AlienInvasion:
             sleep(0.5)
         else:
             self.stats.game_active = False
+            pygame.mouse.set_visible(True)
 
     def _check_aliens_bottom(self):
         """Check if any aliens have reached the bottom of the screen"""
@@ -201,6 +214,25 @@ class AlienInvasion:
                 # Treat this the same as if ship got hit
                 self._ship_hit()
                 break
+
+    def _check_play_button(self,mouse_position):
+        button_clicked = self.play_button.rect.collidepoint(mouse_position)
+        if button_clicked and not self.stats.game_active:
+            self.stats.reset_stats()
+            self.stats.game_active = True
+
+            # Get rid of remaining bullets and fleets
+            self.bullets.empty()
+            self.aliens.empty()
+
+            # Create new fleets and center the ship
+            self._create_fleet()
+            self.ship.center_ship()
+
+            # Hideing the mouse
+            pygame.mouse.set_visible(False)
+
+
 
 if __name__ == '__main__':
     # Make a game instance, and run the game
