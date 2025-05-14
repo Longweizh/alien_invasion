@@ -20,6 +20,9 @@ class GameStats:
         # Start alien invasion in an inactive state
         self.game_active = False
 
+        # High Score would never be reset
+        self.high_score = 0
+
 
     def reset_stats(self):
         """Initialize game stats that can change during the game"""
