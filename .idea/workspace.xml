@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d31c633c-d2dd-4a4c-98ef-38bec7307000" name="Changes" comment="add level and the ships left.&#10;Program completed.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +114,7 @@
       <workItem from="1746163027028" duration="13223000" />
       <workItem from="1746681189250" duration="31926000" />
       <workItem from="1747264545020" duration="3000" />
+      <workItem from="1748143542000" duration="42000" />
     </task>
     <task id="LOCAL-00001" summary="alien_invasion.py SETUP">
       <option name="closed" value="true" />
@@ -235,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747264529813</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add level and the ships left.&#10;Program completed.">
+      <option name="closed" value="true" />
+      <created>1748143547077</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1748143547078</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
