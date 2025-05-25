@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d31c633c-d2dd-4a4c-98ef-38bec7307000" name="Changes" comment="Add high score recording.">
+    <list default="true" id="d31c633c-d2dd-4a4c-98ef-38bec7307000" name="Changes" comment="add level and the ships left.&#10;Program completed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alien_invasion.py" beforeDir="false" afterPath="$PROJECT_DIR$/alien_invasion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_stats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scoreboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/scoreboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ship.py" beforeDir="false" afterPath="$PROJECT_DIR$/ship.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +112,8 @@
       <workItem from="1746137567426" duration="137000" />
       <workItem from="1746137710319" duration="17197000" />
       <workItem from="1746163027028" duration="13223000" />
-      <workItem from="1746681189250" duration="31624000" />
+      <workItem from="1746681189250" duration="31926000" />
+      <workItem from="1747264545020" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="alien_invasion.py SETUP">
       <option name="closed" value="true" />
@@ -230,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747251959007</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add level and the ships left.&#10;Program completed.">
+      <option name="closed" value="true" />
+      <created>1747264529813</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1747264529813</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +262,8 @@
     <MESSAGE value="Add ship-alien interaction." />
     <MESSAGE value="Add score system and reset play system." />
     <MESSAGE value="Add high score recording." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add high score recording." />
+    <MESSAGE value="add level and the ships left.&#10;Program completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="add level and the ships left.&#10;Program completed." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/alien_invasion$ship.coverage" NAME="ship Coverage Results" MODIFIED="1746148331960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
